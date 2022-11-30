@@ -35,7 +35,7 @@ const Board: React.FC<BoardProps> = (props) => {
     }
     return (
         <>
-            <h1>Pranav Kamath and Christian Khun Project</h1>
+            {/* <h1>Pranav Kamath and Christian Khun Project</h1> */}
             <DndProvider backend={HTML5Backend}>
                 <div
                     style={{
