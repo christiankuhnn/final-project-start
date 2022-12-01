@@ -1,0 +1,65 @@
+#room-selection-container {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div#logo-container {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    color: rgb(7, 50, 70);
+    border: 5px solid rgb(239, 156, 68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    font-variant-caps: all-small-caps;
+    background-color: #ce321e;
+}
+
+div#top-menu-container {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    border: 3.5px solid rgb(0, 0, 0);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #5c0a2f;
+}
+
+div#grid {
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-columns: 200px auto;
+}
+
+div#left-menu-container {
+    grid-row: 0.4;
+    grid-column: 0.75;
+    border: 3.5px solid rgb(0, 0, 0);
+    background-color: #5c0a2f;
+    height: 100%;
+    overflow: auto;
+}
+
+div#cardCount{
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+    background-color: salmon;
+}
+
+div#main-board-container {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    border: 1px solid black;
+}
+
+.room-selection-button {
+    margin-left: 5px;
+    margin-right: 5px;
+}
