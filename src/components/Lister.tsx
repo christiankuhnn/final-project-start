@@ -9,7 +9,7 @@ const TileSequence = () => {
     return (
         <div id="furniture-list">
             {tileBedSquare.map((f: Tile) => (
-                <div key={f.name}>
+                <div key={"Hello"}>
                     <p className="furniture-label">
                         {f.name.charAt(0).toUpperCase() + f.name.slice(1)}
                     </p>
