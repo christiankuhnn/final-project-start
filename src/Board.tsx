@@ -34,21 +34,18 @@ const Board: React.FC<BoardProps> = (props) => {
         squares.push(renderSquare(i, picPosition));
     }
     return (
-        <>
-            {/* <h1>Pranav Kamath and Christian Khun Project</h1> */}
-            <DndProvider backend={HTML5Backend}>
-                <div
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        display: "flex",
-                        flexWrap: "wrap"
-                    }}
-                >
-                    {squares}
-                </div>
-            </DndProvider>
-        </>
+        <DndProvider backend={HTML5Backend}>
+            <div
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    flexWrap: "wrap"
+                }}
+            >
+                {squares}
+            </div>
+        </DndProvider>
     );
 };
 
