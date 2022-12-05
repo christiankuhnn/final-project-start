@@ -1,7 +1,7 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
 import TileItem from "./ItemTransformer";
-import type { Tile, Tile2, Tile3 } from "./card";
+import type { Tile } from "./card";
 import { tileBedSquare } from "./data";
 import "./styles.css";
 
