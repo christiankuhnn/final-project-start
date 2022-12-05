@@ -12,6 +12,7 @@ import RoomBoard from "./components/CBoard";
 
 interface SavedRoom {
     id: number;
+    pID: number;
     furniture: Tile[];
 }
 
@@ -22,13 +23,27 @@ let cardCount = 0;
 // };
 
 const Layout = () => {
+    const viewList = ["All", "Saltwater", "Freshwater", "Predator", "Prey"];
+    const viewPrioList = ["1", "2", "3"];
+    const viewTypeList = ["All"];
     const [savedRooms, setSavedRooms] = useState<SavedRoom[]>([]);
     const [tilePartBoard, setTilePartBoard] = useState<Tile[]>([]);
     const [showModal, setShowModal] = useState(false);
+    const [view, setView] = useState(viewList[0]);
+    const [option, setOption] = useState(1);
     const handleShowModal = () => setShowModal(true);
     const handleCloseModal = () => setShowModal(false);
-    const viewPrioList = ["1", "2", "3"];
-    const viewTypeList = ["All"];
+
+    function changePrioOption() {
+        if (view === "1") {
+            setOption(1);
+        } else if (view === "2") {
+            setOption(2);
+        } else if (view === "3") {
+            setOption(3);
+        }
+        handleCloseModal();
+    }
 
     const removeFromCalend = (id: string) => {
         const newItems = tilePartBoard.filter((f) => f.id !== id);
@@ -64,6 +79,7 @@ const Layout = () => {
     const openMenu = () => {
         const newSavedRoom: SavedRoom = {
             id: savedRooms.length + 1,
+            pID: 1,
             furniture: [...tilePartBoard]
         };
         const newSavedRooms = [...savedRooms, newSavedRoom];
@@ -145,14 +161,14 @@ const Layout = () => {
                                             </Form.Select>
                                         </Col>
                                     </Modal.Body>
-                                    {/* <Modal.Footer>
+                                    <Modal.Footer>
                                         <Button
                                             variant="success"
-                                            onClick={changeOption}
+                                            onClick={changePrioOption}
                                         >
                                             Save
                                         </Button>
-                                    </Modal.Footer> */}
+                                    </Modal.Footer>
                                 </Modal>
                             </div>
                         </Col>
@@ -160,7 +176,7 @@ const Layout = () => {
                 </div>
                 <div id="logo-container">
                     <h5>
-                        Calendar Project by Christian Khunn and Pranav Kamath
+                        Scheduler Project by Christian Khunn and Pranav Kamath
                     </h5>
                 </div>
                 <div id="top-menu-container">
