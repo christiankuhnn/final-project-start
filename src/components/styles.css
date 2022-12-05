@@ -10,7 +10,7 @@
 
 .furniture-label {
     font-weight: bold;
-    color: #ffffff;
+    color: rgb(242, 4, 4);
     font-size: 30px;
     font-style: bold;
     font-style: italic;
@@ -25,7 +25,8 @@
     left: 6px;
     margin: 0;
     background-color: aliceblue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
     font-style: italic;
 }
 
