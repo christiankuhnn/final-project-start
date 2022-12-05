@@ -9,12 +9,10 @@ const TileSequence = () => {
     return (
         <div id="furniture-list">
             <h4>Card </h4>
-            <p>low - high priority</p>
+            <p>low - high</p>
             {tileBedSquare.map((f: Tile) => (
-                <div key={"Hello"}>
-                    <p className="furniture-label">
-                        {f.name.charAt(0).toUpperCase() + f.name.slice(1)}
-                    </p>
+                <div key={f.name}>
+                    {f.name + f.priority}
                     <TileItem item={f} />
                 </div>
             ))}
