@@ -182,7 +182,7 @@ const Layout = () => {
                 <div id="top-menu-container">
                     <Container>
                         <Row>
-                            <div id="cardCount"># OF CARDS: {cardCount}</div>
+                            <div id="cardCount"># OF TASKS: {cardCount}</div>
                             <Button onClick={() => emptyCalend()}>
                                 Clear Calendar
                             </Button>
