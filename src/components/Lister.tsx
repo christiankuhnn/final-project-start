@@ -5,7 +5,6 @@ import type { Tile } from "./card";
 import { tileBedSquare } from "./data";
 import "./styles.css";
 
-const c = 0;
 const TileSequence = () => {
     return (
         <div id="furniture-list">
