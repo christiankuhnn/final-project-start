@@ -24,12 +24,13 @@ let cardCount = 0;
 
 const Layout = () => {
     const viewList = ["All"];
-    const viewPrioList = ["1", "2", "3"];
-    const viewTypeList = ["All"];
+    const viewPrioList = ["All", "1", "2", "3"];
     const [savedTasks, setSavedTasks] = useState<SavedTask[]>([]);
+    const [title, setTitle] = useState("");
+    const [desc, setDesc] = useState("");
     const [tilePartBoard, setTilePartBoard] = useState<Tile[]>([]);
     const [showModal, setShowModal] = useState(false);
-    const [view, setView] = useState(viewList[0]);
+    const [view, setView] = useState(viewPrioList[0]);
     const [option, setOption] = useState(1);
     const handleShowModal = () => setShowModal(true);
     const handleCloseModal = () => setShowModal(false);
@@ -44,6 +45,13 @@ const Layout = () => {
         }
         handleCloseModal();
     }
+
+    const titleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setTitle(event.target.value);
+    };
+    const descHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setDesc(event.target.value);
+    };
 
     const removeFromCalend = (id: string) => {
         const newItems = tilePartBoard.filter((f) => f.id !== id);
@@ -76,7 +84,7 @@ const Layout = () => {
         [tilePartBoard]
     );
 
-    const openMenu = () => {
+    const addTask = () => {
         const newSavedTask: SavedTask = {
             id: savedTasks.length + 1,
             pID: 1,
@@ -84,11 +92,6 @@ const Layout = () => {
         };
         const newSavedTasks = [...savedTasks, newSavedTask];
         setSavedTasks(newSavedTasks);
-    };
-
-    const switchToRoom = (id: number) => {
-        const newRoom = savedTasks[id - 1];
-        setTilePartBoard(newRoom.furniture);
     };
 
     React.useEffect(() => {
@@ -107,8 +110,8 @@ const Layout = () => {
                         <h3>_____________</h3>
                         <Row>
                             <Button
-                                variant="failure"
-                                onClick={openMenu}
+                                variant="success"
+                                onClick={addTask}
                                 data-testid="chooseOption"
                             >
                                 New Tasks
@@ -127,7 +130,7 @@ const Layout = () => {
                                         key={`room${T.id}`}
                                         onClick={handleShowModal}
                                     >
-                                        Tile {T.id}
+                                        Task {T.id}
                                     </Button>
                                 ))}
                                 <Modal
@@ -142,23 +145,28 @@ const Layout = () => {
                                     </Modal.Header>
                                     <Modal.Body>
                                         <Col>
-                                            <Form.Select
-                                            // data-testid="list"
-                                            // value={view}
-                                            // onChange={changeView}
-                                            >
-                                                set priority : 1 - 3
-                                                {viewPrioList.map(
-                                                    (s: string) => (
-                                                        <option
-                                                            key={s}
-                                                            value={s}
-                                                        >
-                                                            {s}
-                                                        </option>
-                                                    )
-                                                )}
-                                            </Form.Select>
+                                            <Form.Group className="makeNoteTitle">
+                                                <Form.Label>Title</Form.Label>
+                                                <Form.Control
+                                                    type="textarea"
+                                                    placeholder="Card title..."
+                                                    value={title}
+                                                    onChange={titleHandler}
+                                                    autoFocus
+                                                />
+                                            </Form.Group>
+                                            <Form.Group className="makeNoteTitle">
+                                                <Form.Label>
+                                                    Description
+                                                </Form.Label>
+                                                <Form.Control
+                                                    type="textarea"
+                                                    placeholder="Desc..."
+                                                    value={desc}
+                                                    onChange={descHandler}
+                                                    autoFocus
+                                                />
+                                            </Form.Group>
                                         </Col>
                                     </Modal.Body>
                                     <Modal.Footer>
