@@ -47,8 +47,8 @@ div#left-menu-container {
     overflow: auto;
 }
 
-div#cardCount{
-    color:rgb(255, 255, 255);
+div#cardCount {
+    color: rgb(255, 255, 255);
     font-size: 20px;
     background-color: salmon;
 }
