@@ -7,8 +7,8 @@ import "./styles.css";
 
 const TileSequence = () => {
     return (
-        <div id="furniture-list">
-            <h4>Card </h4>
+        <div id="furniture-lit">
+            <h4>Card:</h4>
             <p>low - high</p>
             {tileBedSquare.map((f: Tile) => (
                 <div key={f.name}>
