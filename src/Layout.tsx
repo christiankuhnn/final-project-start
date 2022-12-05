@@ -10,7 +10,7 @@ import type { Tile } from "./components/card";
 import FurnitureList from "./components/Lister";
 import RoomBoard from "./components/CBoard";
 
-interface SavedRoom {
+interface SavedTask {
     id: number;
     pID: number;
     furniture: Tile[];
@@ -23,10 +23,10 @@ let cardCount = 0;
 // };
 
 const Layout = () => {
-    const viewList = ["All", "Saltwater", "Freshwater", "Predator", "Prey"];
+    const viewList = ["All"];
     const viewPrioList = ["1", "2", "3"];
     const viewTypeList = ["All"];
-    const [savedRooms, setSavedRooms] = useState<SavedRoom[]>([]);
+    const [savedTasks, setSavedTasks] = useState<SavedTask[]>([]);
     const [tilePartBoard, setTilePartBoard] = useState<Tile[]>([]);
     const [showModal, setShowModal] = useState(false);
     const [view, setView] = useState(viewList[0]);
@@ -77,17 +77,17 @@ const Layout = () => {
     );
 
     const openMenu = () => {
-        const newSavedRoom: SavedRoom = {
-            id: savedRooms.length + 1,
+        const newSavedTask: SavedTask = {
+            id: savedTasks.length + 1,
             pID: 1,
             furniture: [...tilePartBoard]
         };
-        const newSavedRooms = [...savedRooms, newSavedRoom];
-        setSavedRooms(newSavedRooms);
+        const newSavedTasks = [...savedTasks, newSavedTask];
+        setSavedTasks(newSavedTasks);
     };
 
     const switchToRoom = (id: number) => {
-        const newRoom = savedRooms[id - 1];
+        const newRoom = savedTasks[id - 1];
         setTilePartBoard(newRoom.furniture);
     };
 
@@ -121,7 +121,7 @@ const Layout = () => {
                         </Row>
                         <Col>
                             <div id="room-selection-container">
-                                {savedRooms.map((T) => (
+                                {savedTasks.map((T) => (
                                     <Button
                                         className="room-selection-button"
                                         key={`room${T.id}`}
