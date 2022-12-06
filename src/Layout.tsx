@@ -114,11 +114,12 @@ const Layout = () => {
                     <h5>
                         Calendar Project by Christian Khunn and Pranav Kamath
                     </h5>
+                    z
                 </div>
                 <div id="top-menu-container">
                     <Container>
                         <Row>
-                            <div id="cardCount"># OF TASKS: {cardCount}</div>
+                            <div id="cardCount"># OF CARDS: {cardCount}</div>
                             <Button onClick={() => emptyCalend()}>
                                 Clear Calendar
                             </Button>
