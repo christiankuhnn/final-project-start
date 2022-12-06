@@ -107,6 +107,7 @@ const Layout = () => {
                 >
                     <Container>
                         <FurnitureList />
+                        {/* <FilterMDL /> */}
                         <h3>_____________</h3>
                         <Row>
                             <Button

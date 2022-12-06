@@ -14,7 +14,6 @@ const TileItem = ({ item, deleteTile }: ItemSet) => {
     const { id, name, left, top, height, width, color } = item;
     const [position, setPosition] = useState({ top: top, left: left });
     const [isHovered, setIsHovered] = useState(false);
-
     const [{ isDragging }, drag] = useDrag({
         item: {
             type: "Furniture",
@@ -35,7 +34,7 @@ const TileItem = ({ item, deleteTile }: ItemSet) => {
         position: id.includes("menu") ? "static" : "absolute",
         left,
         top,
-        height: id.includes("menu") ? height / 2 : height,
+        height: id.includes("menu") ? height / 3 : height,
         width: id.includes("menu") ? width / 2 : width,
         backgroundColor: color,
         margin: 0
