@@ -12,12 +12,14 @@ import "./styles.css";
 const TileSequence = () => {
     return (
         <div id="furniture-lit">
-            <h4>Card:</h4>
-            <p>low - high</p>
+            <h4>Task:</h4>
+            <p>Green : Low Priority</p>
+            <p>Yellow : Medium Priority</p>
+            <p>Red : High Priority</p>
             {/* <FilterNote filterList={filterList}></FilterNote> */}
             {tileBedSquare.map((f: Tile) => (
                 <div key={f.name}>
-                    {f.name + f.priority}
+                    Drag Task To Calendar
                     <TileItem item={f} />
                 </div>
             ))}

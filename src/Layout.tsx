@@ -149,7 +149,7 @@ const Layout = () => {
                                                 <Form.Label>Title</Form.Label>
                                                 <Form.Control
                                                     type="textarea"
-                                                    placeholder="Card title..."
+                                                    placeholder="Task title..."
                                                     value={title}
                                                     onChange={titleHandler}
                                                     autoFocus
@@ -179,6 +179,11 @@ const Layout = () => {
                                     </Modal.Footer>
                                 </Modal>
                             </div>
+                            <div>
+                                <Button onClick={() => emptyCalend}>
+                                    Sort
+                                </Button>
+                            </div>
                         </Col>
                     </Container>
                 </div>
@@ -191,7 +196,7 @@ const Layout = () => {
                 <div id="top-menu-container">
                     <Container>
                         <Row>
-                            <div id="cardCount"># OF CARDS: {cardCount}</div>
+                            <div id="cardCount"># OF TASKS: {cardCount}</div>
                             <Button onClick={() => emptyCalend()}>
                                 Clear Calendar
                             </Button>

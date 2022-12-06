@@ -1,6 +1,7 @@
 /* eslint-disable no-extra-parens */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState, ReactDOM } from "react";
+import { Button } from "react-bootstrap";
 import { useDrag } from "react-dnd";
 import type { Tile } from "./card";
 
@@ -58,7 +59,7 @@ const TileItem = ({ item, deleteTile }: ItemSet) => {
             <div style={{ width: "100%", height: "100%" }}>
                 {showDimensionsAndIcon && (
                     <>
-                        <p className="dimensions-label">tile{id} </p>
+                        <Button>View Task</Button>
                     </>
                 )}
                 {showDimensionsAndIcon && (

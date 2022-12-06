@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Row, Button, Col, Modal, Form } from "react-bootstrap";
 
 type SquareProps = {
     black: boolean;
