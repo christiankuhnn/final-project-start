@@ -29,7 +29,6 @@ const Layout = () => {
     const viewPrioList = ["All", "1", "2", "3"];
     const [savedTasks, setSavedTasks] = useState<SavedTask[]>([]);
     const [title, setTitle] = useState("");
-    const [color, setColor] = useState("");
     const [desc, setDesc] = useState("");
     const [tilePartBoard, setTilePartBoard] = useState<Tile[]>([]);
     const [showModal, setShowModal] = useState(false);
@@ -196,7 +195,6 @@ const Layout = () => {
                     <h5>
                         Scheduler Project by Christian Khunn and Pranav Kamath
                     </h5>
-                    {/* <p></p> */}
                 </div>
                 <div id="top-menu-container">
                     <Container>
