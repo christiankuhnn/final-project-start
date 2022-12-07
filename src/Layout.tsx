@@ -9,6 +9,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import type { Tile } from "./components/card";
 import FurnitureList from "./components/Lister";
 import RoomBoard from "./components/CBoard";
+import TileItem from "./components/ItemTransformer";
 
 interface SavedTask {
     id: number;
@@ -17,6 +18,7 @@ interface SavedTask {
 }
 
 let cardCount = 0;
+const cardList = [];
 
 // const changeView = (event: ChangeEvent) => {
 //     setView(event.target.value);
@@ -64,7 +66,9 @@ const Layout = () => {
         const newItem = { ...item, id: newId, left: left, top: top };
         const newList = [...tilePartBoard, newItem];
         cardCount = newList.length;
+        // TileList.append(newItem);
         setTilePartBoard(newList);
+        cardList.push([newList]);
     };
 
     const emptyCalend = () => {
@@ -192,7 +196,6 @@ const Layout = () => {
                     <h5>
                         Scheduler Project by Christian Khunn and Pranav Kamath
                     </h5>
-                    z
                 </div>
                 <div id="top-menu-container">
                     <Container>

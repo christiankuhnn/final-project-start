@@ -1,4 +1,4 @@
-export interface Bed {
+export interface Card1 {
     id: string;
     name: "Card";
     bunk: boolean;
@@ -10,7 +10,7 @@ export interface Bed {
     color: string;
 }
 
-export interface Desk {
+export interface Card2 {
     id: string;
     name: "Card";
     bunk: boolean;
@@ -21,7 +21,7 @@ export interface Desk {
     left: number;
     color: string;
 }
-export interface Wardrobe {
+export interface Card3 {
     id: string;
     name: "Card";
     bunk: boolean;
@@ -33,6 +33,6 @@ export interface Wardrobe {
     color: string;
 }
 
-export type Tile = Bed;
-export type Tile2 = Desk;
-export type Tile3 = Wardrobe;
+export type Tile = Card1;
+export type Tile2 = Card2;
+export type Tile3 = Card3;
