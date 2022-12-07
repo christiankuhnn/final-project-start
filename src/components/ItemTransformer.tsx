@@ -1,6 +1,7 @@
 /* eslint-disable no-extra-parens */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState, ReactDOM } from "react";
+import { Button } from "react-bootstrap";
 import { useDrag } from "react-dnd";
 import type { Tile } from "./card";
 
@@ -13,6 +14,7 @@ const TileItem = ({ item, deleteTile }: ItemSet) => {
     const { id, name, left, top, height, width, color } = item;
     const [position, setPosition] = useState({ top: top, left: left });
     const [isHovered, setIsHovered] = useState(false);
+    const [isFilter, setIsFilter] = useState(false);
 
     const [{ isDragging }, drag] = useDrag({
         item: {
@@ -58,7 +60,7 @@ const TileItem = ({ item, deleteTile }: ItemSet) => {
             <div style={{ width: "100%", height: "100%" }}>
                 {showDimensionsAndIcon && (
                     <>
-                        <p className="dimensions-label">tile{id} </p>
+                        <Button>View Task</Button>
                     </>
                 )}
                 {showDimensionsAndIcon && (

@@ -20,12 +20,12 @@ function App(): JSX.Element {
                         </Col>
                         <Col>
                             <Button style={{ marginTop: "60px" }}>
-                                Create New Room
+                                {/* Create New Room */}
                             </Button>
                         </Col>
                         <Col>
                             <Button style={{ marginTop: "60px" }}>
-                                View My Rooms
+                                {/* View My Rooms */}
                             </Button>
                         </Col>
                     </Row>
