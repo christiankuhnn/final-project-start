@@ -35,7 +35,8 @@ export function RevealAnswer(): JSX.Element {
             {
                 <div>
                     {" "}
-                    <h5>Drag Task To Calendar</h5> <p>Green : Low Priority</p>
+                    <h5>Drag Task To The Calendar</h5>{" "}
+                    <p>Green : Low Priority</p>
                     <p>Yellow : Med Priority</p>
                     <p>Red : High Priority</p>
                     <p></p>
