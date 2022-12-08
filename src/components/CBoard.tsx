@@ -10,6 +10,7 @@ import TileItem from "./ItemTransformer";
 import { tileBedSquare } from "./data";
 import { Button } from "react-bootstrap";
 import { RevealAnswer } from "./RevealAnswer";
+import { resolveModuleName } from "typescript";
 
 interface BoardContainItems {
     TilePartBoard: Tile[];

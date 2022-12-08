@@ -127,6 +127,25 @@ const Layout = () => {
                                 <p></p>
                             </span>
                         </Row>
+                        <div>
+                            {" "}
+                            <Row>
+                                <Button
+                                    variant="dark"
+                                    data-testid="chooseOption"
+                                >
+                                    Increase Board Size
+                                </Button>
+                            </Row>
+                            <Row>
+                                <Button
+                                    variant="dark"
+                                    data-testid="chooseOption"
+                                >
+                                    Decrease Board Size
+                                </Button>
+                            </Row>
+                        </div>
                         <Col>
                             <div id="room-selection-container">
                                 {savedTasks.map((T) => (
