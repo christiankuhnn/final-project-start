@@ -48,13 +48,6 @@ const Layout = () => {
         handleCloseModal();
     }
 
-    const titleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setTitle(event.target.value);
-    };
-    const descHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setDesc(event.target.value);
-    };
-
     const removeFromCalend = (id: string) => {
         const newItems = tilePartBoard.filter((f) => f.id !== id);
         setTilePartBoard(newItems);
@@ -138,62 +131,7 @@ const Layout = () => {
                             </Row>
                         </div>
                         <Col>
-                            <div id="room-selection-container">
-                                {savedTasks.map((T) => (
-                                    <Button
-                                        className="room-selection-button"
-                                        key={`room${T.id}`}
-                                        onClick={handleShowModal}
-                                    >
-                                        Task {T.id}
-                                    </Button>
-                                ))}
-                                <Modal
-                                    show={showModal}
-                                    onHide={handleCloseModal}
-                                >
-                                    <Modal.Header>
-                                        <Modal.Title>
-                                            {" "}
-                                            |Edit This Task|: {}
-                                        </Modal.Title>
-                                    </Modal.Header>
-                                    <Modal.Body>
-                                        <Col>
-                                            <Form.Group className="makeNoteTitle">
-                                                <Form.Label>Title</Form.Label>
-                                                <Form.Control
-                                                    type="textarea"
-                                                    placeholder="Task title..."
-                                                    value={title}
-                                                    onChange={titleHandler}
-                                                    autoFocus
-                                                />
-                                            </Form.Group>
-                                            <Form.Group className="makeNoteTitle">
-                                                <Form.Label>
-                                                    Description
-                                                </Form.Label>
-                                                <Form.Control
-                                                    type="textarea"
-                                                    placeholder="Desc..."
-                                                    value={desc}
-                                                    onChange={descHandler}
-                                                    autoFocus
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                    </Modal.Body>
-                                    <Modal.Footer>
-                                        <Button
-                                            variant="success"
-                                            onClick={changePrioOption}
-                                        >
-                                            Save
-                                        </Button>
-                                    </Modal.Footer>
-                                </Modal>
-                            </div>
+                            <div id="room-selection-container"></div>
                             <div>
                                 <Button onClick={() => emptyCalend}>
                                     Sort
