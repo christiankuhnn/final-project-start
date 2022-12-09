@@ -55,6 +55,10 @@ const Grid = ({
     });
     return (
         <>
+            <div id="days">
+                <p>SUN MON TUE WED THU FRI SAT</p>
+            </div>
+
             <div id="room-board">
                 <div ref={drop} id="room">
                     {TilePartBoard.map((f: Tile) => (
