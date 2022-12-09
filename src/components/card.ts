@@ -1,5 +1,6 @@
 export interface Card1 {
     id: string;
+    time: string;
     name: "Card";
     bunk: boolean;
     priority: number;
@@ -12,6 +13,7 @@ export interface Card1 {
 
 export interface Card2 {
     id: string;
+    time: string;
     name: "Card";
     bunk: boolean;
     priority: number;
@@ -23,6 +25,7 @@ export interface Card2 {
 }
 export interface Card3 {
     id: string;
+    time: string;
     name: "Card";
     bunk: boolean;
     priority: number;

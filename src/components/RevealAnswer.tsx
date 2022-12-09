@@ -16,20 +16,6 @@ export function RevealAnswer(): JSX.Element {
         }
     }
 
-    // function changeTitle(): void {
-    //     if (counter == 1) {
-    //         setColTitle("Low");
-    //     }
-    //     if (counter == 2) {
-    //         setColTitle("Medium");
-    //     }
-    //     if (counter == 3) {
-    //         setColTitle("High");
-    //     } else {
-    //         setColTitle("All");
-    //     }
-    // }
-
     return (
         <div>
             {

@@ -112,16 +112,7 @@ const Layout = () => {
                     <Container>
                         <FurnitureList />
                         {/* <FilterMDL /> */}
-                        <h3>_____________</h3>
-                        <Row>
-                            <Button
-                                variant="success"
-                                onClick={addTask}
-                                data-testid="chooseOption"
-                            >
-                                New Tasks
-                            </Button>
-                        </Row>
+                        <Row></Row>
                         <Row>
                             <span>
                                 <p></p>
