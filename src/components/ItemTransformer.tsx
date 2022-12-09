@@ -9,10 +9,12 @@ import type { Tile } from "./card";
 interface ItemSet {
     item: Tile;
     deleteTile?: (id: string) => void;
+    width: number;
+    height: number;
 }
 
-const TileItem = ({ item, deleteTile }: ItemSet) => {
-    const { id, left, top, height, width, color } = item;
+const TileItem = ({ item, deleteTile, width, height }: ItemSet) => {
+    const { id, left, top, color } = item;
     const [position, setPosition] = useState({ top: top, left: left });
     const [isHovered, setIsHovered] = useState(false);
     const [showModal, setShowModal] = useState(false);

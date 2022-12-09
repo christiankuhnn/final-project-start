@@ -30,14 +30,20 @@ export function RevealAnswer(): JSX.Element {
                     <p></p>
                     {counter == 0 && (
                         <>
-                            <TileItem item={t[0]} />
-                            <TileItem item={t[1]} />
-                            <TileItem item={t[2]} />
+                            <TileItem item={t[0]} width={85} height={75} />
+                            <TileItem item={t[1]} width={85} height={75} />
+                            <TileItem item={t[2]} width={85} height={75} />
                         </>
                     )}
-                    {counter == 1 && <TileItem item={t[0]} />}
-                    {counter == 2 && <TileItem item={t[1]} />}
-                    {counter == 3 && <TileItem item={t[2]} />}
+                    {counter == 1 && (
+                        <TileItem item={t[0]} width={85} height={75} />
+                    )}
+                    {counter == 2 && (
+                        <TileItem item={t[1]} width={85} height={75} />
+                    )}
+                    {counter == 3 && (
+                        <TileItem item={t[2]} width={85} height={75} />
+                    )}
                 </div>
             }
         </div>

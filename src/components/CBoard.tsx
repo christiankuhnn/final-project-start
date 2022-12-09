@@ -17,6 +17,8 @@ interface BoardContainItems {
     moveTile: (id: string, top: number, left: number) => void;
     addToCalend: (item: Tile, top: number, left: number) => void;
     removeFromCalend: (id: string) => void;
+    width: number;
+    height: number;
 }
 
 function filtCol(board: Tile[]): void {
@@ -27,7 +29,9 @@ const Grid = ({
     TilePartBoard,
     moveTile,
     addToCalend,
-    removeFromCalend
+    removeFromCalend,
+    width,
+    height
 }: BoardContainItems) => {
     const [, drop] = useDrop({
         accept: "Furniture",
@@ -67,6 +71,8 @@ const Grid = ({
                                 deleteTile={removeFromCalend}
                                 key={f.id}
                                 item={f}
+                                width={width}
+                                height={height}
                             />
                         </>
                     ))}

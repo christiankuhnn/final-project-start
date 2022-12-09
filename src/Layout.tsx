@@ -34,8 +34,19 @@ const Layout = () => {
     const [showModal, setShowModal] = useState(false);
     const [view, setView] = useState(viewPrioList[0]);
     const [option, setOption] = useState(1);
+    const [width, setWidth] = useState(85);
+    const [height, setHeight] = useState(75);
     const handleShowModal = () => setShowModal(true);
     const handleCloseModal = () => setShowModal(false);
+    console.log("width: " + width);
+    const increment = () => {
+        setWidth(width + 10);
+        setHeight(height + 10);
+    };
+    const decrement = () => {
+        setWidth(width - 10);
+        setHeight(height - 10);
+    };
 
     function changePrioOption() {
         if (view === "1") {
@@ -47,7 +58,8 @@ const Layout = () => {
         }
         handleCloseModal();
     }
-
+    // use state hook height
+    // use state hook
     const titleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setTitle(event.target.value);
     };
@@ -124,16 +136,18 @@ const Layout = () => {
                                 <Button
                                     variant="dark"
                                     data-testid="chooseOption"
+                                    onClick={(e) => increment()}
                                 >
-                                    Increase Board Size
+                                    Increase Task Size
                                 </Button>
                             </Row>
                             <Row>
                                 <Button
                                     variant="dark"
                                     data-testid="chooseOption"
+                                    onClick={(e) => decrement()}
                                 >
-                                    Decrease Board Size
+                                    Decrease Task Size
                                 </Button>
                             </Row>
                         </div>
@@ -223,6 +237,8 @@ const Layout = () => {
                         moveTile={moveTile}
                         addToCalend={addToCalend}
                         removeFromCalend={removeFromCalend}
+                        width={width}
+                        height={height}
                     />
                 </div>
             </div>
