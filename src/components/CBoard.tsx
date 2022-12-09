@@ -3,16 +3,23 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { useDrop, DragSourceMonitor, DragObjectWithType } from "react-dnd";
 import FurnitureItem from "./ItemTransformer";
-import type { Bed, Tile } from "./card";
+import type { Tile } from "./card";
 
 import "./styles.css";
 import TileItem from "./ItemTransformer";
+import { tileBedSquare } from "./data";
+import { Button } from "react-bootstrap";
+import { RevealAnswer } from "./RevealAnswer";
 
 interface BoardContainItems {
     TilePartBoard: Tile[];
     moveTile: (id: string, top: number, left: number) => void;
     addToCalend: (item: Tile, top: number, left: number) => void;
     removeFromCalend: (id: string) => void;
+}
+
+function filtCol(board: Tile[]): void {
+    board.map((g: Tile) => (g.color = "blue"));
 }
 
 const Grid = ({
@@ -45,19 +52,22 @@ const Grid = ({
             canDrop: monitor.canDrop()
         })
     });
-
     return (
-        <div id="room-board">
-            <div ref={drop} id="room">
-                {TilePartBoard.map((f: Tile) => (
-                    <TileItem
-                        deleteTile={removeFromCalend}
-                        key={f.id}
-                        item={f}
-                    />
-                ))}
+        <>
+            <div id="room-board">
+                <div ref={drop} id="room">
+                    {TilePartBoard.map((f: Tile) => (
+                        <>
+                            <TileItem
+                                deleteTile={removeFromCalend}
+                                key={f.id}
+                                item={f}
+                            />
+                        </>
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

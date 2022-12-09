@@ -9,6 +9,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import type { Tile } from "./components/card";
 import FurnitureList from "./components/Lister";
 import RoomBoard from "./components/CBoard";
+import TileItem from "./components/ItemTransformer";
 
 interface SavedTask {
     id: number;
@@ -17,6 +18,7 @@ interface SavedTask {
 }
 
 let cardCount = 0;
+const cardList = [];
 
 // const changeView = (event: ChangeEvent) => {
 //     setView(event.target.value);
@@ -64,7 +66,9 @@ const Layout = () => {
         const newItem = { ...item, id: newId, left: left, top: top };
         const newList = [...tilePartBoard, newItem];
         cardCount = newList.length;
+        // TileList.append(newItem);
         setTilePartBoard(newList);
+        cardList.push([newList]);
     };
 
     const emptyCalend = () => {
@@ -107,16 +111,8 @@ const Layout = () => {
                 >
                     <Container>
                         <FurnitureList />
-                        <h3>_____________</h3>
-                        <Row>
-                            <Button
-                                variant="success"
-                                onClick={addTask}
-                                data-testid="chooseOption"
-                            >
-                                New Tasks
-                            </Button>
-                        </Row>
+                        {/* <FilterMDL /> */}
+                        <Row></Row>
                         <Row>
                             <span>
                                 <p></p>
@@ -149,7 +145,7 @@ const Layout = () => {
                                                 <Form.Label>Title</Form.Label>
                                                 <Form.Control
                                                     type="textarea"
-                                                    placeholder="Card title..."
+                                                    placeholder="Task title..."
                                                     value={title}
                                                     onChange={titleHandler}
                                                     autoFocus
@@ -178,6 +174,11 @@ const Layout = () => {
                                         </Button>
                                     </Modal.Footer>
                                 </Modal>
+                            </div>
+                            <div>
+                                <Button onClick={() => emptyCalend}>
+                                    Sort
+                                </Button>
                             </div>
                         </Col>
                     </Container>

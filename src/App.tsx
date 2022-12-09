@@ -10,9 +10,9 @@ function App(): JSX.Element {
                     <Row>
                         <Col>
                             <img
-                            // src={require("./images/UDormLogo.png")}
-                            // width="150"
-                            // height="100"
+                                src={require("./images/UDormLogo.png")}
+                                width="150"
+                                height="100"
                             />
                         </Col>
                         <Col>

@@ -1,7 +1,8 @@
-import type { Bed, Desk, Wardrobe } from "./card";
+import type { Card1, Card2, Card3 } from "./card";
 
-const bed: Bed = {
+const card1: Card1 = {
     id: "menu-bed",
+    time: "",
     name: "Card",
     priority: 1,
     height: 75,
@@ -12,8 +13,9 @@ const bed: Bed = {
     color: "lime"
 };
 
-const desk: Desk = {
+const card2: Card2 = {
     id: "menu-bed",
+    time: "",
     name: "Card",
     priority: 2,
     height: 75,
@@ -24,8 +26,9 @@ const desk: Desk = {
     color: "yellow"
 };
 
-const wardrobe: Wardrobe = {
+const card3: Card3 = {
     id: "menu-bed",
+    time: "",
     name: "Card",
     priority: 3,
     height: 75,
@@ -36,4 +39,4 @@ const wardrobe: Wardrobe = {
     color: "red"
 };
 
-export const tileBedSquare = [bed, desk, wardrobe];
+export const tileBedSquare = [card1, card2, card3];
