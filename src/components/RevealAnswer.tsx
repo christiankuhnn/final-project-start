@@ -1,6 +1,6 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
-import { ItemTypes } from "../constants";
+// import { ItemTypes } from "../constants";
 import { tileBedSquare } from "./data";
 import TileItem from "./ItemTransformer";
 
@@ -9,7 +9,7 @@ export function RevealAnswer(): JSX.Element {
     const t = [tileBedSquare[0], tileBedSquare[1], tileBedSquare[2]];
     const [colTitle, setColTitle] = useState<string>("Lowest to Highest ");
     const [counter, setCounter] = useState<number>(0);
-    const [colName, setColName] = useState<string>("lime");
+    // const [colName, setColName] = useState<string>("lime");
 
     function SortThrough(): void {
         if (lForward) {
