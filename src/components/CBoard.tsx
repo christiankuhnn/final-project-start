@@ -21,10 +21,6 @@ interface BoardContainItems {
     height: number;
 }
 
-function filtCol(board: Tile[]): void {
-    board.map((g: Tile) => (g.color = "blue"));
-}
-
 const Grid = ({
     TilePartBoard,
     moveTile,

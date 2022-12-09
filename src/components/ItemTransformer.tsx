@@ -3,8 +3,9 @@
 import React, { useEffect, useState, ReactDOM } from "react";
 import { Button, Col, Form, Modal } from "react-bootstrap";
 import { useDrag } from "react-dnd";
-import { setTokenSourceMapRange } from "typescript";
+import { setCommentRange, setTokenSourceMapRange } from "typescript";
 import type { Tile } from "./card";
+import { tileBedSquare } from "./data";
 
 interface ItemSet {
     item: Tile;
@@ -23,6 +24,7 @@ const TileItem = ({ item, deleteTile, width, height }: ItemSet) => {
     const [title, setModTitle] = useState(item.id);
     const [desc, setModalDescription] = useState("");
     const [name, setName] = useState("Empty");
+    // const [color, setColor] = useState(item.color);
 
     const titleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setModTitle(event.target.value);
