@@ -14,7 +14,7 @@ export function RevealAnswer(): JSX.Element {
     function SortThrough(): void {
         if (lForward) {
             setColTitle("Highest to Lowest ");
-        } else {
+        } else if (!lForward) {
             setColTitle("Lowest to Highest ");
         }
         isLForward(!lForward);
@@ -46,6 +46,13 @@ export function RevealAnswer(): JSX.Element {
                             <TileItem item={t[0]} width={85} height={75} />
                             <TileItem item={t[1]} width={85} height={75} />
                             <TileItem item={t[2]} width={85} height={75} />
+                        </>
+                    )}
+                    {counter == 0 && !lForward && (
+                        <>
+                            <TileItem item={t[2]} width={85} height={75} />
+                            <TileItem item={t[1]} width={85} height={75} />
+                            <TileItem item={t[0]} width={85} height={75} />
                         </>
                     )}
                     {counter == 1 && (

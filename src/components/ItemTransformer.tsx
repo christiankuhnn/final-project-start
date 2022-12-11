@@ -51,13 +51,12 @@ const TileItem = ({ item, deleteTile, width, height }: ItemSet) => {
             isDragging: !!monitor.isDragging()
         })
     });
-
     const styles: Record<string, unknown> = {
         position: id.includes("menu") ? "static" : "absolute",
         left,
         top,
-        height: id.includes("menu") ? height / 3 : height,
-        width: id.includes("menu") ? width / 2 : width,
+        height: id.includes("menu") ? height / 2 : height,
+        width: id.includes("menu") ? width / 1 : width,
         backgroundColor: color,
         margin: 0
     };
@@ -78,7 +77,7 @@ const TileItem = ({ item, deleteTile, width, height }: ItemSet) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div style={{ width: "10%", height: "100%" }}>
+            <div style={{ width: "100%", height: "100%" }}>
                 {showDimensionsAndIcon && (
                     <button onClick={handleShowModal}>{name}</button>
                 )}

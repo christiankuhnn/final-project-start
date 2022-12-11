@@ -140,8 +140,7 @@ const Layout = () => {
                                 >
                                     Increase Task Size
                                 </Button>
-                            </Row>
-                            <Row>
+                                <p></p>
                                 <Button
                                     variant="dark"
                                     data-testid="chooseOption"
@@ -151,14 +150,6 @@ const Layout = () => {
                                 </Button>
                             </Row>
                         </div>
-                        <Col>
-                            <div id="room-selection-container"></div>
-                            <div>
-                                <Button onClick={() => emptyCalend}>
-                                    Sort
-                                </Button>
-                            </div>
-                        </Col>
                     </Container>
                 </div>
                 <div id="logo-container">
