@@ -10,23 +10,24 @@ import TileItem from "./ItemTransformer";
 import { tileBedSquare } from "./data";
 import { Button } from "react-bootstrap";
 import { RevealAnswer } from "./RevealAnswer";
+import { resolveModuleName } from "typescript";
 
 interface BoardContainItems {
     TilePartBoard: Tile[];
     moveTile: (id: string, top: number, left: number) => void;
     addToCalend: (item: Tile, top: number, left: number) => void;
     removeFromCalend: (id: string) => void;
-}
-
-function filtCol(board: Tile[]): void {
-    board.map((g: Tile) => (g.color = "blue"));
+    width: number;
+    height: number;
 }
 
 const Grid = ({
     TilePartBoard,
     moveTile,
     addToCalend,
-    removeFromCalend
+    removeFromCalend,
+    width,
+    height
 }: BoardContainItems) => {
     const [, drop] = useDrop({
         accept: "Furniture",
@@ -54,6 +55,10 @@ const Grid = ({
     });
     return (
         <>
+            <div id="days">
+                <p>SUN MON TUE WED THU FRI SAT</p>
+            </div>
+
             <div id="room-board">
                 <div ref={drop} id="room">
                     {TilePartBoard.map((f: Tile) => (
@@ -62,6 +67,8 @@ const Grid = ({
                                 deleteTile={removeFromCalend}
                                 key={f.id}
                                 item={f}
+                                width={width}
+                                height={height}
                             />
                         </>
                     ))}

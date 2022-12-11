@@ -3,16 +3,19 @@
 import React, { useEffect, useState, ReactDOM } from "react";
 import { Button, Col, Form, Modal } from "react-bootstrap";
 import { useDrag } from "react-dnd";
-import { setTokenSourceMapRange } from "typescript";
+import { setCommentRange, setTokenSourceMapRange } from "typescript";
 import type { Tile } from "./card";
+import { tileBedSquare } from "./data";
 
 interface ItemSet {
     item: Tile;
     deleteTile?: (id: string) => void;
+    width: number;
+    height: number;
 }
 
-const TileItem = ({ item, deleteTile }: ItemSet) => {
-    const { id, left, top, height, width, color } = item;
+const TileItem = ({ item, deleteTile, width, height }: ItemSet) => {
+    const { id, left, top, color } = item;
     const [position, setPosition] = useState({ top: top, left: left });
     const [isHovered, setIsHovered] = useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -21,6 +24,7 @@ const TileItem = ({ item, deleteTile }: ItemSet) => {
     const [title, setModTitle] = useState(item.id);
     const [desc, setModalDescription] = useState("");
     const [name, setName] = useState("Empty");
+    // const [color, setColor] = useState(item.color);
 
     const titleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setModTitle(event.target.value);
@@ -47,13 +51,12 @@ const TileItem = ({ item, deleteTile }: ItemSet) => {
             isDragging: !!monitor.isDragging()
         })
     });
-
     const styles: Record<string, unknown> = {
         position: id.includes("menu") ? "static" : "absolute",
         left,
         top,
-        height: id.includes("menu") ? height / 3 : height,
-        width: id.includes("menu") ? width / 2 : width,
+        height: id.includes("menu") ? height / 2 : height,
+        width: id.includes("menu") ? width / 1 : width,
         backgroundColor: color,
         margin: 0
     };
@@ -74,7 +77,7 @@ const TileItem = ({ item, deleteTile }: ItemSet) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div style={{ width: "10%", height: "100%" }}>
+            <div style={{ width: "100%", height: "100%" }}>
                 {showDimensionsAndIcon && (
                     <button onClick={handleShowModal}>{name}</button>
                 )}
